@@ -1,0 +1,1 @@
+db.welcome.insert({"welcome_text": "Hello world"});

@@ -1,64 +1,95 @@
----?color=linear-gradient(to right, #c02425, #f0cb35)
 @title[Introduction]
+## Development with Containers
 
-@snap[west headline text-white span-70]
-GitPitch<br>*The Template*
-@snapend
+![docker-logo](assets/images/docker-whale-home-logo.png)
 
-@snap[south-west byline  text-white]
-The Fastest Way From Idea To Presentation.
-@snapend
 
----
-@title[Slide Markdown]
-
-### Each slide in this presentation is provided as a *template*.
-
-<br><br>
-
-1. Select only the slide templates that you need.
-1. Customize the template _markdown content_.
-1. Optionally, override template _styles_ and _settings_.
-1. Then present and publish with GitPitch @fa[smile-o]
-<br><br>
+---?image=assets/images/big_poo.png&size=auto 15%
++++?include=pitchme/01-story.md
 
 
 ---
-@title[Tip! Fullscreen]
 
-![TIP](template/img/tip.png)
-<br>
-For the best viewing experience, press F for fullscreen.
+@fa[code fa-4x]
 
----?include=template/md/split-screen/PITCHME.md
++++
 
----?include=template/md/sidebar/PITCHME.md
+Self-service
 
----?include=template/md/list-content/PITCHME.md
++++
 
----?include=template/md/image/PITCHME.md
+Speed and safety
 
----?include=template/md/sidebox/PITCHME.md
++++
 
----?include=template/md/code-presenting/PITCHME.md
+Documentation
 
----?include=template/md/header-footer/PITCHME.md
++++
 
----?include=template/md/quotation/PITCHME.md
+Version Control
 
----?include=template/md/announcement/PITCHME.md
++++
 
----?include=template/md/about/PITCHME.md
+Validation
 
----?include=template/md/wrap-up/PITCHME.md
++++
+
+Reuse
+
++++
+
+Maybe happiness?
+
++++?image=assets/images/docker-whale-home-logo.png&size=auto 25%
++++?image=assets/images/terraform.png&size=auto 35%
++++?image=assets/images/ecs.png&size=auto 30%
+
+---?image=assets/images/Docker-logo.png&size=auto 50%&color=#e7e7e7
+
++++?include=pitchme/03-docker.md
+
 
 ---
-@title[The Template Docs]
 
-@snap[west headline span-100]
-GitPitch<br>*The Template @css[text-orange](End) ;)*
-@snapend
+@fa[cogs fa-4x]
 
-@snap[south docslink span-100]
-For supporting documentation see the [The Template Docs](https://gitpitch.com/docs/the-template)
-@snapend
++++?image=assets/images/flask-logo.png&size=auto 30%
+
++++?image=assets/images/react-logo.png&size=auto 40%&color=#222
+
++++?image=assets/images/nginx-logo.png&size=auto 10%
+
++++?image=assets/images/mongodb-logo.png&size=auto 15%
+
++++?image=assets/images/demo-architecture.png&size=auto 110%
+
++++
+
+```ascii
+├── code/
+│   ├── db/
+│   ├── flask-backend/
+│   ├── nginx/
+│   ├── react-frontend/
+│   └── docker-compose.yml
+```
+
+@[2-5](Services)
+@[6](Configuration)
+
++++?include=pitchme/04-compose.md
+
+---?image=assets/images/iwoca-i.svg&size=auto 20%
+
++++?image=assets/images/gitlab.png&size=contain
+
++++?image=assets/images/maicol.JPG&size=contain&color=#e6f0fc
+
++++?image=assets/images/hermes.jpg&size=auto
+
+--- 
+
+@fa[flag-checkered fa-4x]
+
++++?include=pitchme/06-closing.md
+
