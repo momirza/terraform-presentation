@@ -1,3 +1,4 @@
 footnote : ""
 theme-override : assets/css/PITCHME.css
 highlight : atom-one-light
+pro-menus-hidden : true
