@@ -1,49 +1,56 @@
-Background
+@fa[history fa-4x]
+
++++inline?image=assets/images/badcable16.jpg
+
++++inline?image=assets/images/steph_windows.jpg
 
 +++
 
-[Not so long ago image]
+![aws-logo](assets/images/aws_logo.png)
 
 +++
 
-[Ops team image. steph using windows]
-
-+++ 
-
-Amazon emerged
-[AWS logo]
+![aws-logo](assets/images/aws-console.png)
 
 +++
 
-[Point and click on console image]
+![aws-logo](assets/images/launch-instance.png)
 
 +++
 
-[Create instance image]
+```bash
+$ ssh -i me.pem ubuntu@54.123.78.8
+```
 
 +++
 
-[ssh image]
+```bash
+ubuntu@54.123.78.8 $ git clone github.com/foo/bar
+```
+
 
 +++
 
-[pull your code]
+```bash
+ubuntu@54.123.78.8 bar $ pip install -r requirements.txt
+```
 
 +++
 
-[install your dependencies]
+```bash
+ubuntu@54.123.78.8 bar $ ./manage.py runserver
+```
 
 +++
 
-[run your code]
+[scaling greater needs image]
 
-++++
 
-[Security scaling greater needs image]
++++?image=assets/images/istock-gdpr-concept-image.jpg
 
 +++
 
-[Config drift image 5 servers with the lastest openssl one without because you forgot]
+![Config drift image 5 servers with the lastest openssl one without because you forgot](assets/images/config-drift.png)
 
 +++
 

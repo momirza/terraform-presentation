@@ -34,4 +34,4 @@ This template creates an EC2 instance
 
 +++
 
-![docker-logo](assets/images/code-in-infrastructure-out.png)
+![code-in-infra-out](assets/images/code-in-infrastructure-out.png)
