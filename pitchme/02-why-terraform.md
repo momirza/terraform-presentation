@@ -1,9 +1,8 @@
 @fa[history fa-4x]
 
-+++inline?image=assets/images/badcable16.jpg
++++inline?image=assets/images/badcable16.jpg&size=cover
 
-+++inline?image=assets/images/steph_windows.jpg
-
++++inline?image=assets/images/steph_windows.jpg&size=cover
 +++
 
 ![aws-logo](assets/images/aws_logo.png)
@@ -25,28 +24,27 @@ $ ssh -i me.pem ubuntu@54.123.78.8
 +++
 
 ```bash
-ubuntu@54.123.78.8 $ git clone github.com/foo/bar
+[ubuntu@54-123-78-8 ~]$ git clone github.com/foo/bar
 ```
 
 
 +++
 
 ```bash
-ubuntu@54.123.78.8 bar $ pip install -r requirements.txt
+[ubuntu@54-123-78-8 ~]$ pip install -r requirements.txt
 ```
 
 +++
 
 ```bash
-ubuntu@54.123.78.8 bar $ ./manage.py runserver
+[ubuntu@54-123-78-8 bar]$ ./manage.py runserver
 ```
 
 +++
 
 [scaling greater needs image]
 
-
-+++?image=assets/images/istock-gdpr-concept-image.jpg
++++?image=assets/images/istock-gdpr-concept-image.jpg&size=cover
 
 +++
 
