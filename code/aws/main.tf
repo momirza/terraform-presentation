@@ -59,9 +59,9 @@ resource "aws_elb" "example" {
     security_groups = ["${aws_security_group.allow_all.id}"]
     idle_timeout = 5
     listener {
-        lb_protocol = "https"
-        lb_port = 443
-        ssl_certificate_id = "${aws_acm_certificate_validation.cert.certificate_arn}"
+        lb_protocol = "http"
+        lb_port = 80
+        # ssl_certificate_id = "${aws_acm_certificate_validation.cert.certificate_arn}"
         instance_port = 8000
         instance_protocol = "http"
     }
@@ -76,10 +76,13 @@ resource "aws_elb" "example" {
 
 # Run:
 # $ terraform graph
+# Visualise here:
 # http://dreampuf.github.io/GraphvizOnline/
 
 
+
 # Uncomment the following lines to enable https!
+# Don't forget to update the elb listener above
 
 # resource "aws_acm_certificate" "cert" {
 #   domain_name = "cowoca.com"
