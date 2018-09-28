@@ -27,5 +27,10 @@ class AnimalResource:
             sayer(req.media['text'])
         resp.media = animal_text.text
 
+class HealthCheckResource:
+    def on_get(self, *_):
+        return
+
 api = falcon.API()
 api.add_route('/{animal}', AnimalResource())
+api.add_route('/health_check', HealthCheckResource())
