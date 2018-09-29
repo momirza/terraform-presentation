@@ -1,19 +1,17 @@
-
 provider "aws" {
     region = "eu-west-1"
 }
 
-resource "aws_instance" "example" {
-    count = 2 
+resource "aws_instance" "instance" {
+    count = "${var.instance_count}"
     ami = "ami-047bb4163c506cd98" 
     instance_type = "t2.small"
-    key_name = "test"
     user_data = <<EOF
-                #!/bin/bash
-                sudo yum install -y docker
-                sudo service docker start
-                sudo docker run -p 8000:8000 -d momirza/cowsayer:0.1.0
-                EOF
+    #!/bin/bash
+    sudo yum install -y docker
+    sudo service docker start
+    sudo docker run -p ${var.instance_port}:${var.container_port} -d ${var.image}:${var.image_version}
+    EOF
 
 }
 
@@ -37,40 +35,40 @@ resource "aws_security_group" "allow_all" {
 }
 
 data "aws_route53_zone" "zone" {
-  name = "cowoca.com."
+  name = "${var.domain_name}"
 }
 
 resource "aws_route53_record" "root" {
   zone_id = "${data.aws_route53_zone.zone.zone_id}"
-  name    = "cowoca.com"
+  name    = "${var.domain_name}"
   type    = "A"
 
   alias {
-    name                   = "${aws_elb.example.dns_name}"
-    zone_id                = "${aws_elb.example.zone_id}"
+    name                   = "${aws_elb.elb.dns_name}"
+    zone_id                = "${aws_elb.elb.zone_id}"
     evaluate_target_health = true
   }
 }
 
-resource "aws_elb" "example" {
-    name = "cowsayer-elb"
-    availability_zones = ["${aws_instance.example.*.availability_zone}"]
-    instances = ["${aws_instance.example.*.id}"]
+resource "aws_elb" "elb" {
+    availability_zones = ["${aws_instance.instance.*.availability_zone}"]
+    instances = ["${aws_instance.instance.*.id}"]
     security_groups = ["${aws_security_group.allow_all.id}"]
+    
     idle_timeout = 5
     listener {
-        lb_protocol = "http"
-        lb_port = 80
+        lb_protocol = "${var.load_balancer_protocol}"
+        lb_port = "${lookup(var.load_balancer_port, var.load_balancer_protocol)}"
         # ssl_certificate_id = "${aws_acm_certificate_validation.cert.certificate_arn}"
-        instance_port = 8000
-        instance_protocol = "http"
+        instance_port = "${var.instance_port}"
+        instance_protocol = "${var.instance_protocol}"
     }
     health_check {
         healthy_threshold = 2
         unhealthy_threshold = 2
         timeout = 10
         interval = 20
-        target = "HTTP:8000/health_check"
+        target = "HTTP:${var.instance_port}/${var.health_check_path}"
     }
 }
 
@@ -82,10 +80,11 @@ resource "aws_elb" "example" {
 
 
 # Uncomment the following lines to enable https!
-# Don't forget to update the elb listener above
+# Don't forget to update the elb listener protocol in vars.tf 
+# and uncomment the ssl_certificate_id
 
 # resource "aws_acm_certificate" "cert" {
-#   domain_name = "cowoca.com"
+#   domain_name = "${var.domain_name}"
 #   validation_method = "DNS"
 # }
 

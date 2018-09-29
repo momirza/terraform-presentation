@@ -1,17 +1,40 @@
-Deploy an EC2 instance behind a Load Balancer.
+
+Deploy an EC2 cluster behind a load balancer
+
++++?image=assets/images/demo-infra.png?size=contain
 
 +++
 
-We will cover...
+Variables
 
-+++ 
-
-variables
+```json
+variable "domain_name" {
+    default = "cowoca.com"
+}
+```
 
 +++
 
-dependency graph
+Dependency graphs
 
-+++ 
+![dependency-graph](assets/images/dependency-graph.png)
 
-state
++++
+
+State
+
+```json
+"aws_elb.elb": {
+                    "type": "aws_elb",
+                    "depends_on": [
+                        "aws_instance.instance.*",
+                    ],
+                    "primary": {
+                        "id": "elb",
+                        "attributes": {
+                            "access_logs.#": "0",
+                            ...
+                        }
+                    }
+}
+```

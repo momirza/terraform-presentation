@@ -18,7 +18,7 @@
 +++
 
 ```bash
-$ ssh -i me.pem ubuntu@54.123.78.8
+$ ssh ubuntu@54.123.78.8
 ```
 
 +++
