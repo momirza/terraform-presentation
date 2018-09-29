@@ -1,7 +1,8 @@
 
 Deploy an EC2 cluster behind a load balancer
 
-+++?image=assets/images/demo-infra.png?size=contain
++++
+![infra](assets/images/demo-infra.png)
 
 +++
 
