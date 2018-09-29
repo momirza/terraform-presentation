@@ -72,6 +72,8 @@ resource "aws_elb" "elb" {
     }
 }
 
+# Check out the above resources on the AWS account
+
 # Run:
 # $ terraform graph
 # Visualise here:
