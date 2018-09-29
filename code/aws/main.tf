@@ -17,7 +17,7 @@ resource "aws_instance" "instance" {
 
 resource "aws_security_group" "allow_all" {
   name        = "allow_all"
-  description = "Allow all inbound traffic"
+  description = "Allow all traffic"
 
   ingress {
     from_port   = 0
@@ -75,7 +75,7 @@ resource "aws_elb" "elb" {
 # Run:
 # $ terraform graph
 # Visualise here:
-# http://dreampuf.github.io/GraphvizOnline/
+# http://www.webgraphviz.com
 
 
 
@@ -84,16 +84,16 @@ resource "aws_elb" "elb" {
 # and uncomment the ssl_certificate_id
 
 # resource "aws_acm_certificate" "cert" {
-#   domain_name = "${var.domain_name}"
-#   validation_method = "DNS"
+#     domain_name = "${var.domain_name}"
+#     validation_method = "DNS"
 # }
 
 # resource "aws_route53_record" "cert_validation" {
-#   name = "${aws_acm_certificate.cert.domain_validation_options.0.resource_record_name}"
-#   type = "${aws_acm_certificate.cert.domain_validation_options.0.resource_record_type}"
-#   zone_id = "${data.aws_route53_zone.zone.id}"
-#   records = ["${aws_acm_certificate.cert.domain_validation_options.0.resource_record_value}"]
-#   ttl = 60
+#     name = "${aws_acm_certificate.cert.domain_validation_options.0.resource_record_name}"
+#     type = "${aws_acm_certificate.cert.domain_validation_options.0.resource_record_type}"
+#     zone_id = "${data.aws_route53_zone.zone.id}"
+#     records = ["${aws_acm_certificate.cert.domain_validation_options.0.resource_record_value}"]
+#     ttl = 60
 # }
 
 # resource "aws_acm_certificate_validation" "cert" {

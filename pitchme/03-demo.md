@@ -6,6 +6,19 @@ Deploy an EC2 cluster behind a load balancer
 
 +++
 
+```
+                        ^__^
+                        (oo)\_______
+                        (__)\       )\/\
+                            ||----w |
+                            ||     ||
+
+```
+
+https://hub.docker.com/r/momirza/cowsayer/
+
++++
+
 Variables
 
 ```json
