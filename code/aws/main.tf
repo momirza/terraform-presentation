@@ -59,7 +59,7 @@ resource "aws_elb" "elb" {
     listener {
         lb_protocol = "${var.load_balancer_protocol}"
         lb_port = "${lookup(var.load_balancer_port, var.load_balancer_protocol)}"
-        # ssl_certificate_id = "${aws_acm_certificate_validation.cert.certificate_arn}"
+        # ssl_certificate_id = "${aws_acm_certificate_validation.validated_cert.certificate_arn}"
         instance_port = "${var.instance_port}"
         instance_protocol = "${var.instance_protocol}"
     }
@@ -98,7 +98,7 @@ resource "aws_elb" "elb" {
 #     ttl = 60
 # }
 
-# resource "aws_acm_certificate_validation" "cert" {
+# resource "aws_acm_certificate_validation" "validated_cert" {
 #   certificate_arn = "${aws_acm_certificate.cert.arn}"
 #   validation_record_fqdns = ["${aws_route53_record.cert_validation.fqdn}"]
 # }

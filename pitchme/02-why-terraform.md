@@ -42,7 +42,7 @@ $ ssh ubuntu@54.123.78.8
 
 +++
 
-[scaling greater needs image]
+![scaling greater needs image](assets/images/cpu-usage.png)
 
 +++?image=assets/images/istock-gdpr-concept-image.jpg&size=cover
 
@@ -56,24 +56,24 @@ Terraform avoids these problems because it allows you to define <span class="gol
 
 +++
 
-[No more clicking image]
+![No more clicking image](assets/images/no-more-clicking.png)
 
 +++
 
-[image of terraform file]
+![image of terraform file](assets/images/terraform-file.png)
 
 +++
 
-[gitlab repo image]
+![gitlab repo image](assets/images/infrastructure-repo.png)
 
 +++
 
-[Gitlab ci tick mark]
+![Gitlab ci tick mark](assets/images/gitlab-tick.png)
 
 +++
 
-[reproducibilty image with copies of an instance]
+![reproducibilty image with copies of an instance](assets/images/all-green.png)
 
 +++
 
-[sleep soundly]
+@fa[smile-o fa-4x]

@@ -34,4 +34,10 @@ This template creates an EC2 instance
 
 +++
 
+
+`$ terraform apply`
+
++++
+
+
 ![code-in-infra-out](assets/images/code-in-infrastructure-out.png)
