@@ -4,10 +4,8 @@ Terraform is tool that allows you to <span class="gold">provision</span> infrast
 
 It supports many cloud service providers
 
-- AWS
-- Google Cloud
-- Heroku
-- CloudFlare
+![providers](assets/images/providers.png)
+
 
 +++ 
 
@@ -40,4 +38,4 @@ This template creates an EC2 instance
 +++
 
 
-![code-in-infra-out](assets/images/code-in-infrastructure-out.png)
+![code-in-infra-out](assets/images/code-in-infra-out.png)
