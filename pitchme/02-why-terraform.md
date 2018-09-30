@@ -52,7 +52,7 @@ $ ssh ubuntu@54.123.78.8
 
 +++
 
-Terraform avoids these problems because it allows you to define <span class="gold">immutable</span> infrastructure with code.
+Terraform avoids these problems because it allows you to define <span class="gold">immutable</span> infrastructure with <span class="gold">code</span>
 
 +++
 

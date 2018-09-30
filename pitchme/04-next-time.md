@@ -11,19 +11,21 @@
 +++
 
 CI runner improvements
-- faster runners
-- reduce failure rate
-- job runtime monitoring
+- Faster Django jobs
+- Reduce random failures
+- Job runtime monitoring
 
 
 
 +++
+
+![review-apps](assets/images/review_apps_preview_in_mr.png)
 
 Review Apps
 
 +++
 
-Preproduction and staging servers
+Pre-production and staging servers
 
 +++
 
