@@ -2,11 +2,8 @@
 Deploy an EC2 cluster behind a load balancer
 
 +++
-![infra](assets/images/demo-infra.png)
 
-+++
-
-```
+```ascii
                         ^__^
                         (oo)\_______
                         (__)\       )\/\
@@ -16,6 +13,10 @@ Deploy an EC2 cluster behind a load balancer
 ```
 
 https://hub.docker.com/r/momirza/cowsayer/
+
++++
+
+![infra](assets/images/demo-infra.png)
 
 +++
 
