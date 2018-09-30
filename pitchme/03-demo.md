@@ -38,15 +38,13 @@ Dependency graphs
 State
 
 ```json
-"aws_elb.elb": {
-                    "type": "aws_elb",
-                    "depends_on": [
-                        "aws_instance.instance.*",
-                    ],
+"aws_instance.instance.0": {
+                    "type": "aws_instance",
+                    "depends_on": [],
                     "primary": {
-                        "id": "elb",
+                        "id": "i-0542caf31848033e6",
                         "attributes": {
-                            "access_logs.#": "0",
+                            "ami": "ami-047bb4163c506cd98",
                             ...
                         }
                     }
