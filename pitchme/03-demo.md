@@ -52,3 +52,12 @@ State
                     }
 }
 ```
+
++++
+
+```ascii
+├── aws/
+│   ├── main.tf
+│   ├── vars.tf
+│   └── terraform.tfstate
+```
