@@ -31,7 +31,7 @@ variable "instance_protocol" {
 }
 
 variable "load_balancer_protocol" {
-    default = "http"
+    default = "https"
 }
 
 variable "load_balancer_port" {

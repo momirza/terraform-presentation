@@ -59,7 +59,7 @@ resource "aws_elb" "elb" {
     listener {
         lb_protocol = "${var.load_balancer_protocol}"
         lb_port = "${lookup(var.load_balancer_port, var.load_balancer_protocol)}"
-        # ssl_certificate_id = "${aws_acm_certificate_validation.validated_cert.certificate_arn}"
+        ssl_certificate_id = "${aws_acm_certificate_validation.validated_cert.certificate_arn}"
         instance_port = "${var.instance_port}"
         instance_protocol = "${var.instance_protocol}"
     }
@@ -85,20 +85,20 @@ resource "aws_elb" "elb" {
 # Don't forget to update the elb listener protocol in vars.tf 
 # and uncomment the ssl_certificate_id
 
-# resource "aws_acm_certificate" "cert" {
-#     domain_name = "${var.domain_name}"
-#     validation_method = "DNS"
-# }
+resource "aws_acm_certificate" "cert" {
+    domain_name = "${var.domain_name}"
+    validation_method = "DNS"
+}
 
-# resource "aws_route53_record" "cert_validation" {
-#     name = "${aws_acm_certificate.cert.domain_validation_options.0.resource_record_name}"
-#     type = "${aws_acm_certificate.cert.domain_validation_options.0.resource_record_type}"
-#     zone_id = "${data.aws_route53_zone.zone.id}"
-#     records = ["${aws_acm_certificate.cert.domain_validation_options.0.resource_record_value}"]
-#     ttl = 60
-# }
+resource "aws_route53_record" "cert_validation" {
+    name = "${aws_acm_certificate.cert.domain_validation_options.0.resource_record_name}"
+    type = "${aws_acm_certificate.cert.domain_validation_options.0.resource_record_type}"
+    zone_id = "${data.aws_route53_zone.zone.id}"
+    records = ["${aws_acm_certificate.cert.domain_validation_options.0.resource_record_value}"]
+    ttl = 60
+}
 
-# resource "aws_acm_certificate_validation" "validated_cert" {
-#   certificate_arn = "${aws_acm_certificate.cert.arn}"
-#   validation_record_fqdns = ["${aws_route53_record.cert_validation.fqdn}"]
-# }
+resource "aws_acm_certificate_validation" "validated_cert" {
+  certificate_arn = "${aws_acm_certificate.cert.arn}"
+  validation_record_fqdns = ["${aws_route53_record.cert_validation.fqdn}"]
+}
