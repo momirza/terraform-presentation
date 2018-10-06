@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_instance" "instance" {
     count = "${var.instance_count}"
     ami = "ami-047bb4163c506cd98" 
-    instance_type = "t2.small"
+    instance_type = "t2.nano"
     user_data = <<EOF
     #!/bin/bash
     sudo yum install -y docker
